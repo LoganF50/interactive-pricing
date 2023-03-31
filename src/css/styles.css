@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap");
+
+:root {
+  /* FONT FAMILY */
+  --font-family: "Manrope", sans-serif;
+
+  /* FONT SIZE */
+  /* base values */
+  --text-base-size: 1em;
+  --text-scale-ratio: 1.2;
+  /* type scale */
+  --text-xs: calc(1em / (var(--text-scale-ratio) * var(--text-scale-ratio)));
+  --text-sm: calc(1em / var(--text-scale-ratio));
+  --text-md: calc(1em * var(--text-scale-ratio));
+  --text-lg: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio));
+  --text-xl: calc(
+    1em * var(--text-scale-ratio) * var(--text-scale-ratio) *
+      var(--text-scale-ratio)
+  );
+  --text-xxl: calc(
+    1em * var(--text-scale-ratio) * var(--text-scale-ratio) *
+      var(--text-scale-ratio) * var(--text-scale-ratio)
+  );
+  --text-xxxl: calc(
+    1em * var(--text-scale-ratio) * var(--text-scale-ratio) *
+      var(--text-scale-ratio) * var(--text-scale-ratio) *
+      var(--text-scale-ratio)
+  );
+
+  /* FONT WEIGHT */
+  --font-weight-thin: 100;
+  --font-weight-extra-light: 200;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
+  --font-weight-black: 900;
+
+  /* SPACING */
+  --space-unit: 1em;
+  --space-xxs: calc(0.25 * var(--space-unit));
+  --space-xs: calc(0.5 * var(--space-unit));
+  --space-sm: calc(0.75 * var(--space-unit));
+  --space-md: calc(1.25 * var(--space-unit));
+  --space-lg: calc(2 * var(--space-unit));
+  --space-xl: calc(3.25 * var(--space-unit));
+  --space-xxl: calc(5.25 * var(--space-unit));
+
+  /* BORDER RADIUS */
+  --border-radius-rounded-full: 9999px;
+
+  /* COLORS */
+  /* color palette (e.g. --color-primary)
+    primary: main call-to-action color
+    accent: used to highlight something important
+    neutral: grayscale tones (whites, grays, blacks)
+    feedback: success error, warning, etc
+  */
+  /* primary */
+  --c-cyan-light: hsl(174, 77%, 80%);
+  --c-cyan-dark: hsl(174, 86%, 45%);
+  --c-orange-light: hsl(14, 92%, 95%);
+  --c-orange-dark: hsl(15, 100%, 70%);
+  --c-purple: hsl(226, 100%, 87%);
+  /* neutral */
+  --c-white: hsl(0, 0%, 100%);
+  --c-white-medium: hsl(230, 100%, 99%);
+  --c-white-dark: hsl(224, 65%, 95%);
+  --c-blue-light: hsl(223, 50%, 87%);
+  --c-blue-medium: hsl(225, 20%, 60%);
+  --c-blue-dark: hsl(227, 35%, 25%);
+  /* semantic colors (e.g. --color-link: var(--color-primary) */
+  --color-button-background: var(--c-blue-dark);
+  --color-button-text: var(--c-purple);
+  --color-discount-background: var(--c-orange-light);
+  --color-discount-text: var(--c-orange-dark);
+  --color-main-background: var(--c-white-medium);
+  --color-pricing-background: var(--c-white);
+  --color-slider-background: var(--c-cyan-dark);
+  --color-slider-bar-empty: var(--c-white-dark);
+  --color-slider-bar-full: var(--c-cyan-light);
+  --color-toggle-background: var(--c-blue-light);
+  --color-text-dark: var(--c-blue-dark);
+  --color-text-light: var(--c-blue-medium);
+}
+
+/* These are not useful for frontendmentor unless trying to create custom theme */
+html[data-theme="dark"] {
+  /* COLORS */
+}
+
+html[data-theme="light"] {
+  /* COLORS */
+}
+
+/* main */
+body {
+  background-image: url(/images/bg-pattern.svg);
+  background-repeat: no-repeat;
+  background-color: var(--color-main-background);
+  background-size: 100% 25%;
+  color: var(--color-text-light);
+  font-family: var(--font-family);
+  font-size: var(--text-base-size);
+  font-weight: var(--font-weight-semi-bold);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
