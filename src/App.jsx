@@ -64,7 +64,7 @@ function App() {
             <span className="card__price" id="price">
               {getPrice()}
             </span>
-            /month
+            {" / month"}
           </div>
           <div className="card__billing">
             <div>Monthly Billing</div>
