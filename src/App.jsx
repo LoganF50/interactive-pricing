@@ -3,12 +3,42 @@ import "./css/styles.css";
 import { useState } from "react";
 import { Button } from "./components/Button";
 import { Header } from "./components/Header";
+import { Slider } from "./components/Slider";
 import { Switch } from "./components/Switch";
 
 function App() {
+  const pricing = [
+    { views: "10k", price: 8 },
+    { views: "50k", price: 12 },
+    { views: "100k", price: 16 },
+    { views: "500k", price: 24 },
+    { views: "1m", price: 36 },
+  ];
+  const [currentPriceIndex, setCurrentPriceIndex] = useState(2);
   const [isYearlyBilling, setIsYearlyBilling] = useState(false);
 
-  const handleYearlyBillingToggle = () => {
+  const getPrice = () => {
+    const discount = 1 - 0.25; //25% off
+    const price = isYearlyBilling
+      ? pricing[currentPriceIndex].price * discount
+      : pricing[currentPriceIndex].price;
+    return price.toLocaleString("us-US", {
+      style: "currency",
+      currency: "USD",
+      minimumFractionDigits: 2,
+    });
+  };
+
+  const getViews = () => {
+    return pricing[currentPriceIndex].views;
+  };
+
+  const handleSliderChange = (e) => {
+    const value = Number(e.target.value);
+    setCurrentPriceIndex(value);
+  };
+
+  const handleYearlyBillingChange = () => {
     setIsYearlyBilling(!isYearlyBilling);
   };
 
@@ -21,12 +51,18 @@ function App() {
       <main className="card">
         <div className="card__section">
           <div className="card__views">
-            <span id="views">100k</span> pageviews
+            <span id="views">{getViews()}</span> pageviews
           </div>
-          <div className="card__slider">PLACEHOLDER SLIDER</div>
+          <Slider
+            label={"slider-pricing"}
+            min={0}
+            max={pricing.length - 1}
+            value={currentPriceIndex}
+            onChange={handleSliderChange}
+          />
           <div className="card__pricing">
             <span className="card__price" id="price">
-              $16.00
+              {getPrice()}
             </span>
             /month
           </div>
@@ -35,7 +71,7 @@ function App() {
             <Switch
               isOn={isYearlyBilling}
               label="yearly-billing"
-              handleToggle={handleYearlyBillingToggle}
+              handleToggle={handleYearlyBillingChange}
             />
             <div>Yearly Billing</div>
             <div className="card__pill">-25%</div>
