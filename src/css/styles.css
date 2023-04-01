@@ -123,6 +123,7 @@ body {
   text-align: center;
 }
 
+/* Button */
 .button {
   background-color: var(--color-button-background);
   color: var(--color-button-text);
@@ -138,6 +139,7 @@ body {
   color: var(--color-button-text-hover);
 }
 
+/* card */
 .card {
   display: flex;
   flex-direction: column;
@@ -189,6 +191,7 @@ body {
   height: 2px;
 }
 
+/* Header */
 .header {
   background-image: url(/images/pattern-circles.svg);
   background-repeat: no-repeat;
@@ -210,6 +213,7 @@ body {
   font-size: var(--text-xxxl);
 }
 
+/* list */
 .list {
   display: flex;
   flex-direction: column;
@@ -223,4 +227,46 @@ body {
 .list__feature::before {
   content: url(./images/icon-check.svg);
   padding-right: var(--space-md);
+}
+
+/* Switch */
+.switch__checkbox {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.switch__label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 3.6rem;
+  height: 1.8rem;
+  background: var(--color-toggle-background);
+  border-radius: var(--border-radius-rounded-full);
+  position: relative;
+  transition: background-color 0.2s;
+}
+
+.switch__label--on {
+  background: var(--color-slider-bar-full);
+}
+
+.switch__label .switch__button {
+  content: "";
+  position: absolute;
+  top: 0.3rem;
+  left: 0.3rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: var(--border-radius-rounded-full);
+  transition: 0.2s;
+  background: var(--color-pricing-background);
+  box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
+}
+
+.switch__checkbox:checked + .switch__label .switch__button {
+  left: calc(100% - 0.3rem);
+  transform: translateX(-100%);
 }
