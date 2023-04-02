@@ -6,16 +6,19 @@ export const Slider = ({ min, max, value, onChange, label }) => {
   };
 
   return (
-    <input
-      type="range"
-      name={label}
-      id={label}
-      className="slider"
-      min={min}
-      max={max}
-      value={value}
-      onChange={onChange}
-      style={getBackgroundSize()}
-    />
+    <>
+      <input
+        type="range"
+        name={label}
+        id={label}
+        aria-labelledby={label}
+        className="slider"
+        min={min}
+        max={max}
+        value={value}
+        onChange={onChange}
+        style={getBackgroundSize()}
+      />
+    </>
   );
 };
