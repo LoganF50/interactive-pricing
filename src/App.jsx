@@ -74,7 +74,8 @@ function App() {
               handleToggle={handleYearlyBillingChange}
             />
             <div>Yearly Billing</div>
-            <div className="card__pill">-25%</div>
+            <div className="card__pill card__pill--small">-25%</div>
+            <div className="card__pill card__pill--large">25% discount</div>
           </div>
         </div>
         <hr className="card__separator" />
