@@ -9,6 +9,7 @@ export const Switch = ({ isOn, handleToggle, label }) => {
         onChange={handleToggle}
         id={label}
         type="checkbox"
+        aria-label={label}
       />
       <label
         className={isOn ? "switch__label switch__label--on" : "switch__label"}

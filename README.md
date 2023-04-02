@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Frontend Mentor Solution URL]()
+- Solution URL: [Frontend Mentor Solution URL](https://www.frontendmentor.io/solutions/responsive-interactive-pricing-using-flexbox-and-react-pgfDcq1jo7)
 - Live Site URL: [Github Pages URL](https://loganf50.github.io/interactive-pricing/)
 
 ## My process
@@ -44,8 +44,6 @@ Users should be able to:
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
 - Vite
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
